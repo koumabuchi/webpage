@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RUAAIR & CO. | Handcrafted Jewelry - Lahore's Favorite Brand</title>
+  <meta name="description" content="Lahore's best handcrafted jewelry brand. Shop trendy, affordable jewelry with delivery across Lahore.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ===== GLOBAL VARIABLES & RESETS ===== */
+    :root {
+      --gold: #D4AF37;
+      --gold-light: #F5E6B3;
+      --gold-dark: #B8860B;
+      --black: #111111;
+      --black-light: #333333;
+      --white: #FFFFFF;
+      --gray-light: #F5F5F5;
+      --gray: #E5E5E5;
+      --transition: all 0.3s ease;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --section-padding: 80px 0;
+      --header-height: 80px;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--white);
+      color: var(--black-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-top: var(--header-height);
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 2px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+    
+    .btn:hover {
+      background: var(--gold-dark);
+      color: var(--white);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+    
+    .section-padding {
+      padding: var(--section-padding);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .animate-fade {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    
+    /* ===== HEADER & NAVIGATION ===== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 0;
+      background: var(--white);
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      height: var(--header-height);
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      height: 70px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-family: 'Playfair Display', serif;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 40px;
+      margin-right: 10px;
+      object-fit: contain;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-links li {
+      list-style: none;
+      position: relative;
+    }
+    
+    .nav-links a {
+      font-weight: 500;
+      font-size: 14px;
+      transition: var(--transition);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover:after {
+      width: 100%;
+    }
+    
+    .nav-icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .nav-icons a {
+      font-size: 16px;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .nav-icons a:hover {
+      color: var(--gold);
+      transform: translateY(-3px);
+    }
+    
+    .cart-count {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: var(--gold);
+      color: var(--black);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+    
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      transition: var(--transition);
+    }
+    
+    .hamburger:hover {
+      color: var(--gold);
+    }
+    
+    /* ===== MOBILE MENU ===== */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100vh;
+      background: var(--white);
+      z-index: 2000;
+      transition: var(--transition);
+      box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .mobile-menu.active {
+      right: 0;
+    }
+    
+    .mobile-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    
+    .close-menu {
+      font-size: 24px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .close-menu:hover {
+      color: var(--gold);
+      transform: rotate(90deg);
+    }
+    
+    .mobile-nav-links {
+      flex: 1;
+    }
+    
+    .mobile-nav-links li {
+      list-style: none;
+      margin-bottom: 15px;
+    }
+    
+    .mobile-nav-links a {
+      font-size: 16px;
+      font-weight: 500;
+      transition: var(--transition);
+      display: block;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .mobile-nav-links a:hover {
+      color: var(--gold);
+      padding-left: 10px;
+    }
+    
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1500;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+    
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* ===== HERO SECTION ===== */
+    .hero {
+      background-color: var(--gray-light);
+      padding: 0;
+      text-align: center;
+      position: relative;
+      height: calc(100vh - var(--header-height));
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+      z-index: 1;
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      color: var(--white);
+    }
+    
+    .hero h1 {
+      font-size: 72px;
+      margin-bottom: 20px;
+      color: var(--white);
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      letter-spacing: 2px;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: 1px;
+    }
+
+    .hero .btn {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+
+    .hero .btn:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+    
+    /* ===== CATEGORIES SECTION ===== */
+    .categories {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 18px;
+      color: var(--black-light);
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-title h2 {
+      font-size: 36px;
+      color: var(--black);
+      display: inline-block;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 2px;
+      background: var(--gold);
+    }
+    
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .category-card {
+      background: var(--white);
+      border-radius: 2px;
+      padding: 30px;
+      text-align: center;
+      transition: var(--transition);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.05);
+      cursor: pointer;
+    }
+
+    .category-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+    
+    .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .category-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .category-icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: var(--gold);
+    }
+    
+    .category-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    .category-desc {
+      font-size: 14px;
+      color: var(--black-light);
+      opacity: 0.8;
+    }
+    
+    /* ===== PRODUCTS SECTION ===== */
+    .products {
+      background-color: var(--gray-light);
+      padding: 80px 0;
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    
+    .product-card {
+      background: var(--white);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--gold);
+      color: var(--black);
+      padding: 5px 15px;
+      border-radius: 2px;
+      font-size: 12px;
+      font-weight: 600;
+      z-index: 2;
+      letter-spacing: 1px;
+    }
+    
+    .product-img-container {
+      position: relative;
+      overflow: hidden;
+      height: 300px;
+    }
+    
+    .product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .product-card:hover .product-img {
+      transform: scale(1.05);
+    }
+    
+    .product-info {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .product-title {
+      font-size: 16px;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: 1px;
+    }
+    
+    .product-price {
+      color: var(--gold-dark);
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+    
+    .old-price {
+      text-decoration: line-through;
+      color: var(--black-light);
+      opacity: 0.6;
+      font-size: 14px;
+      margin-left: 8px;
+    }
+    
+    .product-rating {
+      margin: 10px 0;
+      color: var(--gold);
+      font-size: 14px;
+    }
+    
+    .product-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    
+    .action-btn {
+      padding: 8px 15px;
+      background: var(--gray);
+      color: var(--black);
+      border: none;
+      border-radius: 2px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+    
+    .action-btn:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .view-all {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    /* Category Sections */
+    .category-section {
+      padding: 80px 0;
+      display: none;
+    }
+
+    .category-section.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .category-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .back-to-categories {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+
+    .back-to-categories:hover {
+      color: var(--gold-dark);
+      transform: translateX(-5px);
+    }
+
+    .back-to-categories i {
+      margin-right: 5px;
+    }
+    
+    /* ===== TESTIMONIALS SECTION ===== */
+    .testimonials {
+      padding: 80px 0;
+      text-align: center;
+      background: var(--white);
+    }
+    
+    .testimonial-slider {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .testimonial-slide {
+      text-align: center;
+      padding: 0 20px;
+      display: none;
+    }
+    
+    .testimonial-slide.active {
+      display: block;
+      animation: fadeIn 1s ease;
+    }
+    
+    .testimonial-content {
+      font-size: 20px;
+      font-style: italic;
+      color: var(--black);
+      margin-bottom: 30px;
+      line-height: 1.8;
+      position: relative;
+    }
+
+    .testimonial-content:before,
+    .testimonial-content:after {
+      content: '"';
+      font-size: 40px;
+      color: var(--gold-light);
+      position: absolute;
+      opacity: 0.3;
+    }
+
+    .testimonial-content:before {
+      top: -20px;
+      left: -10px;
+    }
+
+    .testimonial-content:after {
+      bottom: -40px;
+      right: -10px;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .author-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid var(--gold);
+    }
+    
+    .author-name {
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--black);
+    }
+    
+    .author-role {
+      font-size: 14px;
+      color: var(--gold-dark);
+    }
+    
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 40px;
+    }
+    
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gray);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .dot.active {
+      background: var(--gold);
+    }
+    
+    /* ===== NEWSLETTER SECTION ===== */
+    .newsletter {
+      background-color: var(--black);
+      padding: 80px 0;
+      text-align: center;
+      color: var(--white);
+    }
+    
+    .newsletter h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+    
+    .newsletter p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      opacity: 0.8;
+    }
+    
+    .newsletter-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+    }
+    
+    .newsletter-input {
+      flex: 1;
+      padding: 15px 25px;
+      border: none;
+      font-size: 16px;
+      border-radius: 2px 0 0 2px;
+      outline: none;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .newsletter-btn {
+      padding: 15px 30px;
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 0 2px 2px 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
+    
+    .newsletter-btn:hover {
+      background: var(--gold-dark);
+      color: var(--white);
+    }
+    
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--black);
+      color: var(--white);
+      padding: 80px 0 30px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    
+    .footer-col h3 {
+      font-size: 18px;
+      margin-bottom: 25px;
+      color: var(--gold);
+      letter-spacing: 1px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+    
+    .footer-links li {
+      list-style: none;
+      margin-bottom: 15px;
+    }
+    
+    .footer-links a {
+      font-size: 14px;
+      transition: var(--transition);
+      opacity: 0.7;
+    }
+    
+    .footer-links a:hover {
+      color: var(--gold);
+      opacity: 1;
+      padding-left: 5px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--gold);
+      color: var(--black);
+      transform: translateY(-3px);
+    }
+
+    .footer-logo {
+      font-size: 24px;
+      margin-bottom: 20px;
+      display: inline-block;
+      letter-spacing: 3px;
+    }
+
+    .footer-about {
+      opacity: 0.7;
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 14px;
+      opacity: 0.5;
+    }
+
+    .footer-bottom a {
+      transition: var(--transition);
+    }
+
+    .footer-bottom a:hover {
+      color: var(--gold);
+    }
+    
+    /* ===== TOAST NOTIFICATION ===== */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--gold);
+      color: var(--black);
+      padding: 15px 25px;
+      border-radius: 2px;
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .toast i {
+      margin-right: 10px;
+    }
+    
+    /* ===== MOBILE RESPONSIVE ===== */
+    @media (max-width: 1200px) {
+      .hero h1 {
+        font-size: 60px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hamburger {
+        display: block;
+      }
+      
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+      }
+
+      .categories-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      }
+      
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero {
+        height: auto;
+        min-height: auto;
+        padding: 100px 0;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+      
+      .section-title h2 {
+        font-size: 28px;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+      
+      .newsletter-input,
+      .newsletter-btn {
+        width: 100%;
+        border-radius: 2px;
+      }
+      
+      .newsletter-input {
+        margin-bottom: 10px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .logo {
+        font-size: 20px;
+      }
+
+      .logo-img {
+        height: 30px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section-title h2 {
+        font-size: 26px;
+      }
+      
+      .categories-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+
+      .category-card {
+        padding: 20px;
+      }
+      
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .testimonial-content {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        
+        <span>RUAAIR & CO.</span>
+      </a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-icons">
+        <a href="#" class="cart-icon">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count">0</span>
+        </a>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="logo">RUAAIR & CO.</a>
+      <div class="close-menu" id="closeMenu"><i class="fas fa-times"></i></div>
+    </div>
+    
+    <ul class="mobile-nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#rings">Rings</a></li>
+      <li><a href="#necklaces">Necklaces</a></li>
+      <li><a href="#earrings">Earrings</a></li>
+      <li><a href="#bracelets">Bracelets</a></li>
+      <li><a href="#bangles">Bangles</a></li>
+      <li><a href="#nosepins">Nose Pins</a></li>
+      <li><a href="#sets">Sets</a></li>
+    </ul>
+  </div>
+  
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="hero section-padding" id="home">
+    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Luxury Jewelry" class="hero-bg">
+    <div class="container">
+      <div class="hero-content animate-fade">
+        <h1>Exquisite Jewelry Crafted in Lahore</h1>
+        <p>Discover our unique collections of handcrafted jewelry, made with passion and precision.</p>
+        <a href="#shop" class="btn">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories section-padding" id="collections">
+    <div class="container">
+      <div class="section-subtitle">Our Collections</div>
+      <div class="section-title">
+        <h2>Find Your Perfect Piece</h2>
+      </div>
+      
+      <div class="categories-grid">
+        <div class="category-card animate-fade delay-1" onclick="showCategory('rings')">
+          <div class="category-icon"><i class="fas fa-ring"></i></div>
+          <h3 class="category-title">Rings</h3>
+          <p class="category-desc">Elegant designs for every occasion</p>
+        </div>
+        
+        <div class="category-card animate-fade delay-2" onclick="showCategory('necklaces')">
+          <div class="category-icon"><i class="fas fa-gem"></i></div>
+          <h3 class="category-title">Necklaces</h3>
+          <p class="category-desc">Statement pieces to elevate your look</p>
+        </div>
+        
+        <div class="category-card animate-fade delay-3" onclick="showCategory('earrings')">
+          <div class="category-icon"><i class="fas fa-heart"></i></div>
+          <h3 class="category-title">Earrings</h3>
+          <p class="category-desc">From studs to chandeliers</p>
+        </div>
+        
+        <div class="category-card animate-fade delay-1" onclick="showCategory('bracelets')">
+          <div class="category-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3 class="category-title">Bracelets</h3>
+          <p class="category-desc">Delicate to bold designs</p>
+        </div>
+        
+        <div class="category-card animate-fade delay-2" onclick="showCategory('bangles')">
+          <div class="category-icon"><i class="fas fa-circle"></i></div>
+          <h3 class="category-title">Bangles</h3>
+          <p class="category-desc">Traditional and modern styles</p>
+        </div>
+        
+        <div class="category-card animate-fade delay-3" onclick="showCategory('nosepins')">
+          <div class="category-icon"><i class="fas fa-dot-circle"></i></div>
+          <h3 class="category-title">Nose Pins</h3>
+          <p class="category-desc">Elegant nose jewelry</p>
+        </div>
+
+        <div class="category-card animate-fade delay-1" onclick="showCategory('sets')">
+          <div class="category-icon"><i class="fas fa-layer-group"></i></div>
+          <h3 class="category-title">Sets</h3>
+          <p class="category-desc">Complete jewelry ensembles</p>
+        </div>
+
+        <div class="category-card animate-fade delay-2" onclick="showCategory('newarrivals')">
+          <div class="category-icon"><i class="fas fa-star"></i></div>
+          <h3 class="category-title">New Arrivals</h3>
+          <p class="category-desc">Latest designs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Sections -->
+  <!-- Rings Section -->
+  <section id="rings" class="category-section">
+    <div class="container">
+      <div class="category-header">
+        <h2>Rings Collection</h2>
+        <p>Explore our exquisite range of handcrafted rings</p>
+      </div>
+      
+      <div class="product-grid">
+        <!-- Ring Product 1 -->
+        <div class="product-card animate-fade">
+          <div class="product-badge">Bestseller</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1603974372033-9b2453a2220e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Zahara Gold Ring" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Zahara Gold Ring</h3>
+            <div class="product-rating">★★★★★ (42)</div>
+            <div class="product-price">Rs. 5,499 <span class="old-price">Rs. 6,999</span></div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ring Product 2 -->
+        <div class="product-card animate-fade delay-1">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1603974372033-9b2453a2220e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Diamond Cluster Ring" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Diamond Cluster Ring</h3>
+            <div class="product-rating">★★★★☆ (28)</div>
+            <div class="product-price">Rs. 7,999</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ring Product 3 -->
+        <div class="product-card animate-fade delay-2">
+          <div class="product-badge">New</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1611591437281-4608be122683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Emerald Cut Ring" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Emerald Cut Ring</h3>
+            <div class="product-rating">★★★★★ (35)</div>
+            <div class="product-price">Rs. 9,499</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ring Product 4 -->
+        <div class="product-card animate-fade delay-3">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Ruby Band Ring" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Ruby Band Ring</h3>
+            <div class="product-rating">★★★★☆ (24)</div>
+            <div class="product-price">Rs. 6,299</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ring Product 5 -->
+        <div class="product-card animate-fade">
+          <div class="product-badge">Limited</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Sapphire Statement Ring" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Sapphire Statement Ring</h3>
+            <div class="product-rating">★★★★★ (18)</div>
+            <div class="product-price">Rs. 8,799</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <a href="#collections" class="back-to-categories" onclick="hideCategories()">
+        <i class="fas fa-arrow-left"></i> Back to Collections
+      </a>
+    </div>
+  </section>
+
+  <!-- Necklaces Section -->
+  <section id="necklaces" class="category-section">
+    <div class="container">
+      <div class="category-header">
+        <h2>Necklaces Collection</h2>
+        <p>Discover our stunning range of necklaces</p>
+      </div>
+      
+      <div class="product-grid">
+        <!-- Necklace Product 1 -->
+        <div class="product-card animate-fade">
+          <div class="product-badge">Bestseller</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Amara Pendant Necklace" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Amara Pendant Necklace</h3>
+            <div class="product-rating">★★★★★ (36)</div>
+            <div class="product-price">Rs. 8,999</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Necklace Product 2 -->
+        <div class="product-card animate-fade delay-1">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pearl Strand Necklace" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Pearl Strand Necklace</h3>
+            <div class="product-rating">★★★★☆ (24)</div>
+            <div class="product-price">Rs. 11,499</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Necklace Product 3 -->
+        <div class="product-card animate-fade delay-2">
+          <div class="product-badge">New</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1611591437281-4608be122683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Gold Choker Necklace" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Gold Choker Necklace</h3>
+            <div class="product-rating">★★★★★ (31)</div>
+            <div class="product-price">Rs. 7,299</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Necklace Product 4 -->
+        <div class="product-card animate-fade delay-3">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1603974372033-9b2453a2220e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Diamond Pendant Necklace" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Diamond Pendant Necklace</h3>
+            <div class="product-rating">★★★★☆ (19)</div>
+            <div class="product-price">Rs. 12,999 <span class="old-price">Rs. 14,999</span></div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <a href="#collections" class="back-to-categories" onclick="hideCategories()">
+        <i class="fas fa-arrow-left"></i> Back to Collections
+      </a>
+    </div>
+  </section>
+
+  <!-- Earrings Section -->
+  <section id="earrings" class="category-section">
+    <div class="container">
+      <div class="category-header">
+        <h2>Earrings Collection</h2>
+        <p>Beautiful earrings for every style</p>
+      </div>
+      
+      <div class="product-grid">
+        <!-- Earring Product 1 -->
+        <div class="product-card animate-fade">
+          <div class="product-badge">New</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Zoya Drop Earrings" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Zoya Drop Earrings</h3>
+            <div class="product-rating">★★★★★ (28)</div>
+            <div class="product-price">Rs. 3,999</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Earring Product 2 -->
+        <div class="product-card animate-fade delay-1">
+          <div class="product-badge">Bestseller</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Pearl Stud Earrings" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Pearl Stud Earrings</h3>
+            <div class="product-rating">★★★★★ (42)</div>
+            <div class="product-price">Rs. 2,999</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Earring Product 3 -->
+        <div class="product-card animate-fade delay-2">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1611591437281-4608be122683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Gold Hoop Earrings" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Gold Hoop Earrings</h3>
+            <div class="product-rating">★★★★☆ (35)</div>
+            <div class="product-price">Rs. 4,599</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Earring Product 4 -->
+        <div class="product-card animate-fade delay-3">
+          <div class="product-badge">Limited</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1603974372033-9b2453a2220e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Diamond Cluster Earrings" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Diamond Cluster Earrings</h3>
+            <div class="product-rating">★★★★★ (27)</div>
+            <div class="product-price">Rs. 6,799</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <a href="#collections" class="back-to-categories" onclick="hideCategories()">
+        <i class="fas fa-arrow-left"></i> Back to Collections
+      </a>
+    </div>
+  </section>
+
+  <!-- Bracelets Section -->
+  <section id="bracelets" class="category-section">
+    <div class="container">
+      <div class="category-header">
+        <h2>Bracelets Collection</h2>
+        <p>Elegant bracelets for your wrist</p>
+      </div>
+      
+      <div class="product-grid">
+        <!-- Bracelet Product 1 -->
+        <div class="product-card animate-fade">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1611591437281-4608be122683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Layla Chain Bracelet" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Layla Chain Bracelet</h3>
+            <div class="product-rating">★★★★☆ (19)</div>
+            <div class="product-price">Rs. 6,499 <span class="old-price">Rs. 7,999</span></div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bracelet Product 2 -->
+        <div class="product-card animate-fade delay-1">
+          <div class="product-badge">New</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Beaded Charm Bracelet" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Beaded Charm Bracelet</h3>
+            <div class="product-rating">★★★★★ (23)</div>
+            <div class="product-price">Rs. 5,299</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bracelet Product 3 -->
+        <div class="product-card animate-fade delay-2">
+          <div class="product-badge">Bestseller</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Gold Bangle Bracelet" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Gold Bangle Bracelet</h3>
+            <div class="product-rating">★★★★☆ (31)</div>
+            <div class="product-price">Rs. 7,899</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <a href="#collections" class="back-to-categories" onclick="hideCategories()">
+        <i class="fas fa-arrow-left"></i> Back to Collections
+      </a>
+    </div>
+  </section>
+
+  <!-- Bangles Section -->
+  <section id="bangles" class="category-section">
+    <div class="container">
+      <div class="category-header">
+        <h2>Bangles Collection</h2>
+        <p>Traditional and modern bangle designs</p>
+      </div>
+      
+      <div class="product-grid">
+        <!-- Bangles Product 1 -->
+        <div class="product-card animate-fade">
+          <div class="product-badge">Bestseller</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1603974372033-9b2453a2220e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Gold Plated Bangles Set" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Gold Plated Bangles Set</h3>
+            <div class="product-rating">★★★★★ (47)</div>
+            <div class="product-price">Rs. 9,999 <span class="old-price">Rs. 12,999</span></div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bangles Product 2 -->
+        <div class="product-card animate-fade delay-1">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1611591437281-4608be122683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Silver Oxidized Bangles" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Silver Oxidized Bangles</h3>
+            <div class="product-rating">★★★★☆ (28)</div>
+            <div class="product-price">Rs. 7,499</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bangles Product 3 -->
+        <div class="product-card animate-fade delay-2">
+          <div class="product-badge">New</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Diamond Cut Bangles" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Diamond Cut Bangles</h3>
+            <div class="product-rating">★★★★★ (19)</div>
+            <div class="product-price">Rs. 11,299</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <a href="#collections" class="back-to-categories" onclick="hideCategories()">
+        <i class="fas fa-arrow-left"></i> Back to Collections
+      </a>
+    </div>
+  </section>
+
+  <!-- Nose Pins Section -->
+  <section id="nosepins" class="category-section">
+    <div class="container">
+      <div class="category-header">
+        <h2>Nose Pins Collection</h2>
+        <p>Elegant nose jewelry for every style</p>
+      </div>
+      
+      <div class="product-grid">
+        <!-- Nose Pin Product 1 -->
+        <div class="product-card animate-fade">
+          <div class="product-badge">Bestseller</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Gold Nose Ring" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Gold Nose Ring</h3>
+            <div class="product-rating">★★★★★ (32)</div>
+            <div class="product-price">Rs. 1,999</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nose Pin Product 2 -->
+        <div class="product-card animate-fade delay-1">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Diamond Nose Pin" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Diamond Nose Pin</h3>
+            <div class="product-rating">★★★★☆ (21)</div>
+            <div class="product-price">Rs. 2,499</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nose Pin Product 3 -->
+        <div class="product-card animate-fade delay-2">
+          <div class="product-badge">New</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1611591437281-4608be122683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Pearl Nose Stud" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Pearl Nose Stud</h3>
+            <div class="product-rating">★★★★★ (27)</div>
+            <div class="product-price">Rs. 1,799</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <a href="#collections" class="back-to-categories" onclick="hideCategories()">
+        <i class="fas fa-arrow-left"></i> Back to Collections
+      </a>
+    </div>
+  </section>
+
+  <!-- Sets Section -->
+  <section id="sets" class="category-section">
+    <div class="container">
+      <div class="category-header">
+        <h2>Jewelry Sets Collection</h2>
+        <p>Complete ensembles for a coordinated look</p>
+      </div>
+      
+      <div class="product-grid">
+        <!-- Set Product 1 -->
+        <div class="product-card animate-fade">
+          <div class="product-badge">Bestseller</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1603974372033-9b2453a2220e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Zahara Gold Set" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Zahara Gold Set</h3>
+            <div class="product-rating">★★★★★ (39)</div>
+            <div class="product-price">Rs. 15,999 <span class="old-price">Rs. 18,999</span></div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Set Product 2 -->
+        <div class="product-card animate-fade delay-1">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pearl Ensemble Set" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Pearl Ensemble Set</h3>
+            <div class="product-rating">★★★★☆ (25)</div>
+            <div class="product-price">Rs. 12,499</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Set Product 3 -->
+        <div class="product-card animate-fade delay-2">
+          <div class="product-badge">New</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1611591437281-4608be122683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Diamond Wedding Set" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Diamond Wedding Set</h3>
+            <div class="product-rating">★★★★★ (18)</div>
+            <div class="product-price">Rs. 22,999</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <a href="#collections" class="back-to-categories" onclick="hideCategories()">
+        <i class="fas fa-arrow-left"></i> Back to Collections
+      </a>
+    </div>
+  </section>
+
+  <!-- New Arrivals Section -->
+  <section id="newarrivals" class="category-section">
+    <div class="container">
+      <div class="category-header">
+        <h2>New Arrivals</h2>
+        <p>Discover our latest jewelry designs</p>
+      </div>
+      
+      <div class="product-grid">
+        <!-- New Arrival Product 1 -->
+        <div class="product-card animate-fade">
+          <div class="product-badge">New</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Emerald Statement Necklace" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Emerald Statement Necklace</h3>
+            <div class="product-rating">★★★★★ (14)</div>
+            <div class="product-price">Rs. 14,999</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Arrival Product 2 -->
+        <div class="product-card animate-fade delay-1">
+          <div class="product-badge">New</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Ruby Cluster Ring" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Ruby Cluster Ring</h3>
+            <div class="product-rating">★★★★☆ (9)</div>
+            <div class="product-price">Rs. 8,499</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Arrival Product 3 -->
+        <div class="product-card animate-fade delay-2">
+          <div class="product-badge">New</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1611591437281-4608be122683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Gold Plated Armlet" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Gold Plated Armlet</h3>
+            <div class="product-rating">★★★★★ (12)</div>
+            <div class="product-price">Rs. 6,299</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <a href="#collections" class="back-to-categories" onclick="hideCategories()">
+        <i class="fas fa-arrow-left"></i> Back to Collections
+      </a>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products section-padding" id="shop">
+    <div class="container">
+      <div class="section-subtitle">Featured Pieces</div>
+      <div class="section-title">
+        <h2>Our Best Sellers</h2>
+        <p>Handpicked favorites from our customers</p>
+      </div>
+      
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card animate-fade">
+          <div class="product-badge">Bestseller</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1603974372033-9b2453a2220e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Celestial Ring" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Zahara Gold Ring</h3>
+            <div class="product-rating">★★★★★ (42)</div>
+            <div class="product-price">Rs. 5,499 <span class="old-price">Rs. 6,999</span></div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card animate-fade delay-1">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Luna Necklace" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Amara Pendant Necklace</h3>
+            <div class="product-rating">★★★★☆ (36)</div>
+            <div class="product-price">Rs. 8,999</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="product-card animate-fade delay-2">
+          <div class="product-badge">New</div>
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Aurora Earrings" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Zoya Drop Earrings</h3>
+            <div class="product-rating">★★★★★ (28)</div>
+            <div class="product-price">Rs. 3,999</div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="product-card animate-fade delay-3">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1611591437281-4608be122683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Solstice Bracelet" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Layla Chain Bracelet</h3>
+            <div class="product-rating">★★★★☆ (19)</div>
+            <div class="product-price">Rs. 6,499 <span class="old-price">Rs. 7,999</span></div>
+            <div class="product-actions">
+              <button class="action-btn add-to-cart">Add to Cart</button>
+              <button class="action-btn add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="view-all">
+        <a href="#collections" class="btn">View All Collections</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="testimonials section-padding" id="about">
+    <div class="container">
+      <div class="section-subtitle">Our Story</div>
+      <div class="section-title">
+        <h2>Craftsmanship & Passion</h2>
+      </div>
+      
+      <div class="testimonial-slider">
+        <!-- About Content -->
+        <div class="testimonial-slide active">
+          <div class="testimonial-content">
+            Founded in Lahore, RUA AIR & CO. began as a small workshop dedicated to creating jewelry that blends contemporary design with traditional Pakistani craftsmanship.
+          </div>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Founder" class="author-img">
+            <div class="author-name">Ayesha Rahman</div>
+            <div class="author-role">Founder & Creative Director</div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 1 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            "The Zahara ring from RUA AIR is my absolute favorite! I've received so many compliments since I started wearing it. The quality is exceptional for the price."
+          </div>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Fatima K." class="author-img">
+            <div class="author-name">Fatima K.</div>
+            <div class="author-role">Lahore</div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            "I've purchased several pieces from RUAAIR over the years, and each one has exceeded my expectations. The Amara necklace is particularly stunning and has become my signature piece."
+          </div>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sana M." class="author-img">
+            <div class="author-name">Sana M.</div>
+            <div class="author-role">Lahore</div>
+          </div>
+        </div>
+        
+        <div class="slider-dots">
+          <div class="dot active" onclick="currentSlide(1)"></div>
+          <div class="dot" onclick="currentSlide(2)"></div>
+          <div class="dot" onclick="currentSlide(3)"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <div class="container">
+      <h2>Join Our Community</h2>
+      <p>Subscribe to receive updates on new collections and special offers.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Your email address" class="newsletter-input" required>
+        <button type="submit" class="newsletter-btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">RUAAIR & CO.</div>
+          <p class="footer-about">Lahore's premier handcrafted jewelry brand. Each piece is designed to be treasured and passed down through generations.</p>
+          <div class="social-links">
+            <a href="https://instagram.com/ruaair.co" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Shop</h3>
+          <ul class="footer-links">
+            <li><a href="#rings">Rings</a></li>
+            <li><a href="#necklaces">Necklaces</a></li>
+            <li><a href="#earrings">Earrings</a></li>
+            <li><a href="#bracelets">Bracelets</a></li>
+            <li><a href="#bangles">Bangles</a></li>
+            <li><a href="#nosepins">Nose Pins</a></li>
+            <li><a href="#sets">Sets</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Information</h3>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#">Care Instructions</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@ruaair.co">hello@ruaair.co</a></li>
+            <li><a href="tel:+923001234567">+92 300 1234567</a></li>
+            <li><a href="https://instagram.com/ruaair.co" target="_blank">Instagram: @ruaair.co</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 RUAAIR & CO. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMessage">Item added to cart</span>
+  </div>
+
+  <script>
+    // Toast Notification
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toastMessage');
+      toastMessage.textContent = message;
+      toast.classList.add('show');
+      
+      setTimeout(function() {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Header Scroll Effect
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Testimonial Slider
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("testimonial-slide");
+      let dots = document.getElementsByClassName("dot");
+      
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      
+      for (i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+      }
+      
+      for (i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+      }
+      
+      slides[slideIndex-1].classList.add("active");
+      dots[slideIndex-1].classList.add("active");
+    }
+    
+    // Auto-rotate testimonials
+    setInterval(function() {
+      currentSlide(slideIndex += 1);
+      if (slideIndex > 3) slideIndex = 1;
+    }, 6000);
+    
+    // Cart Counter
+    let cartCount = 0;
+    const cartButtons = document.querySelectorAll('.add-to-cart, .cart-icon');
+    
+    cartButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        if (button.classList.contains('cart-icon')) {
+          e.preventDefault();
+          return;
+        }
+        
+        cartCount++;
+        document.querySelector('.cart-count').textContent = cartCount;
+        
+        // Add animation to cart icon
+        const cartIcon = document.querySelector('.cart-icon i');
+        cartIcon.style.transform = 'scale(1.3)';
+        setTimeout(() => {
+          cartIcon.style.transform = 'scale(1)';
+        }, 300);
+
+        // Show toast notification
+        showToast('Item added to cart');
+      });
+    });
+    
+    // Wishlist functionality
+    const wishlistButtons = document.querySelectorAll('.add-to-wishlist');
+    
+    wishlistButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        const heartIcon = this.querySelector('i');
+        heartIcon.classList.toggle('far');
+        heartIcon.classList.toggle('fas');
+        
+        if (heartIcon.classList.contains('fas')) {
+          showToast('Added to wishlist');
+        } else {
+          showToast('Removed from wishlist');
+        }
+      });
+    });
+
+    // Mobile Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const overlay = document.getElementById('overlay');
+    
+    hamburger.addEventListener('click', function() {
+      mobileMenu.classList.add('active');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+    
+    closeMenu.addEventListener('click', function() {
+      mobileMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+    
+    overlay.addEventListener('click', function() {
+      mobileMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+    
+    // Newsletter Form
+    const newsletterForm = document.getElementById('newsletterForm');
+    
+    newsletterForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      showToast('Thank you for subscribing!');
+      newsletterForm.reset();
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        if (this.getAttribute('href') === '#') return;
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          if (mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+    });
+
+    // Initialize animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedElements = document.querySelectorAll('.animate-fade');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      animatedElements.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+      });
+    });
+
+    // Category Navigation Functions
+    function showCategory(categoryId) {
+      // Hide all category sections
+      document.querySelectorAll('.category-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Hide categories grid
+      document.querySelector('.categories').style.display = 'none';
+      
+      // Show selected category
+      const categorySection = document.getElementById(categoryId);
+      if (categorySection) {
+        categorySection.classList.add('active');
+        categorySection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function hideCategories() {
+      // Show categories grid
+      document.querySelector('.categories').style.display = 'block';
+      
+      // Hide all category sections
+      document.querySelectorAll('.category-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Scroll to collections section
+      document.querySelector('#collections').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Handle URL hash on page load
+    window.addEventListener('load', function() {
+      const hash = window.location.hash;
+      if (hash && hash !== '#home' && hash !== '#collections') {
+        const categoryId = hash.substring(1);
+        showCategory(categoryId);
+      }
+    });
+  </script>
+</body>
+</html>
